@@ -3,7 +3,6 @@
 Saw this thing called a Lovebox on Instagram, that allows you to send images to it. So I decided to make a budget version
 
 <br>
-<br>
 
 <p align="center" style="vertical-align: top; position: relative" >
   
