@@ -44,6 +44,20 @@ https://en.lovebox.love/
 </p>
 
 
+## Component List
+
+* LCD 1.44" Red Serial 128X128 SPI TFT 
+* Adafruit Feather HUZZAH with ESP8266 https://www.adafruit.com/product/2821
+* Blue LED
+* Micro USB Cord
+* 3D Printed Parts
+
+
+## Libraries
+
+* For TFT Display https://github.com/sumotoy/TFT_ILI9163C
+* ESP8266 https://learn.adafruit.com/adafruit-io-basics-esp8266-arduino/arduino-io-library
+
 
 
 
