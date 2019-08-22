@@ -43,6 +43,9 @@ https://en.lovebox.love/
   
 </p>
 
+<br>
+
+
 
 ## Component List
 
@@ -51,6 +54,8 @@ https://en.lovebox.love/
 * Blue LED
 * Micro USB Cord
 * 3D Printed Parts
+
+<br>
 
 
 ## Libraries
