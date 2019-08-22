@@ -53,9 +53,7 @@ app.get('/imagetest',function(req,res){
 
 app.post('/getDrawing',function(req,res){
 	var imageDataString = req.body.imageDataString; // 128*128
-	
-	console.log(imageDataString);
-	
+
 	if(lovebox_sock == null){
 		console.log("No Lovebox sock");
 	} else {
@@ -68,7 +66,6 @@ app.post('/getDrawing',function(req,res){
 
 io.on('connection', function(socket) {
 	console.log("New Connection");
-
 });
 
 
@@ -82,7 +79,6 @@ http.listen(8432, function() {
 
 
 var net = require('net');
-
 var lovebox_sock;
 
 
@@ -95,9 +91,7 @@ var connectedUsers = new Array();
 
 net.createServer(function(sock) {
 
-	var id;
-	var target = 9911;
-    console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
+    console.log('LOVE BOX CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
     lovebox_sock = sock;
     
     sock.on('data', function(data) {
@@ -115,6 +109,7 @@ net.createServer(function(sock) {
 		
 		for(var x = 0; x < imageArray.length; x++){
 			for(var y = 0; y < imageArray[x].length; y++){
+				//imageArray[x][y] = Math.round(Math.random());
 				imageArray[x][y] = Math.round(Math.random());
 			}
 		}
@@ -128,29 +123,9 @@ net.createServer(function(sock) {
 		console.log(longAssString.length);
         
         sock.write(longAssString.substring(0, 2047));
-     //   sock.write(longAssString.substring(2048, 4095));
+        sock.write(longAssString.substring(2048, 4095));
         
         
-        
-        
-	/*	try{
-			var parsed = JSON.parse(data);	
-			//console.log(parsed.type);
-
-			if(parsed.type == "id"){
-				id = parseInt(parsed.msg);
-				connectedUsers.push([id,sock]);
-				console.log(connectedUsers);
-				
-				if(id == 1111){ // trash bin 
-					cosnsole.log("hi 1111")
-					}
-				} 
-				
-		}catch(e){
-			console.log(e);
-		} 
-*/
     });
 
     sock.on('close', function(data) {
