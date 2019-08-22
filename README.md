@@ -69,6 +69,13 @@ https://en.lovebox.love/
 * For TFT Display https://github.com/sumotoy/TFT_ILI9163C
 * ESP8266 https://learn.adafruit.com/adafruit-io-basics-esp8266-arduino/arduino-io-library
 
+<br>
 
+## Shitty Wiring Diagram
+<p align="center" style="vertical-align: top; position: relative" >
+  
+<img align="top" style="vertical-align:top" src="https://github.com/aziddy/budget_Lovebox/blob/master/images/shitty_wiring.PNG?raw=true" width="500"/>  
+  
+</p>
 
 
