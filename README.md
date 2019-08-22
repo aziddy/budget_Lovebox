@@ -6,7 +6,7 @@ Saw this thing called a Lovebox on Instagram, that allows you to send images to 
 
 <p align="center" style="vertical-align: top; position: relative" >
   
-  <img align="top" style="vertical-align:top" src="https://github.com/aziddy/budget_Lovebox/blob/master/images/jif.gif?raw=true" width="400"/>  
+  <img align="top" style="vertical-align:top" src="https://github.com/aziddy/budget_Lovebox/blob/master/images/jif.gif?raw=true" width="600"/>  
   
   <br>
   
