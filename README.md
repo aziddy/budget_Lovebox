@@ -55,10 +55,14 @@ https://en.lovebox.love/
 * Micro USB Cord
 * 3D Printed Parts
 
-
-
 <br>
-
+<p align="center" style="vertical-align: top; position: relative" >
+  
+<img align="top" style="vertical-align:top" src="https://github.com/aziddy/budget_Lovebox/blob/master/images/Components/2821-05.jpg?raw=true" width="300"/>  
+<img align="top" style="vertical-align:top" src="https://github.com/aziddy/budget_Lovebox/blob/master/images/Components/s-l1600.jpg?raw=true" width="300"/>  
+  
+</p>
+<br>
 
 ## Libraries
 
