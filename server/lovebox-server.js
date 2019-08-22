@@ -23,32 +23,6 @@ app.get('/',function(req,res){
 });
 
 
-app.get('/imagetest',function(req,res){
-	
-	var longAssString = ""
-	
-	var imageArray = new Array(128);
-	
-	for(var x = 0; x < imageArray.length; x++){
-		imageArray[x] = new Array(128);
-	}
-	
-	for(var x = 0; x < imageArray.length; x++){
-		for(var y = 0; y < imageArray[x].length; y++){
-			imageArray[x][y] = 1;
-		}
-	}
-	
-		for(var x = 0; x < imageArray.length; x++){
-		for(var y = 0; y < imageArray[x].length; y++){
-			longAssString += imageArray[x][y];
-		}
-	}
-	
-	
-	res.send(longAssString);
-});
-
 
 
 app.post('/getDrawing',function(req,res){
@@ -64,16 +38,11 @@ app.post('/getDrawing',function(req,res){
 
 
 
-io.on('connection', function(socket) {
-	console.log("New Connection");
-});
-
 
 http.listen(8432, function() {
 	console.log('listening on *:8432');
 	console.log(__dirname);
 });
-
 
 
 
@@ -98,40 +67,14 @@ net.createServer(function(sock) {
         
         console.log('DATA ' + sock.remoteAddress + ': ' + data);
         
-        
-        var longAssString = ""
-	
-		var imageArray = new Array(128);
-		
-		for(var x = 0; x < imageArray.length; x++){
-			imageArray[x] = new Array(128);
-		}
-		
-		for(var x = 0; x < imageArray.length; x++){
-			for(var y = 0; y < imageArray[x].length; y++){
-				//imageArray[x][y] = Math.round(Math.random());
-				imageArray[x][y] = Math.round(Math.random());
-			}
-		}
-		
-			for(var x = 0; x < imageArray.length; x++){
-			for(var y = 0; y < imageArray[x].length; y++){
-				longAssString += imageArray[x][y];
-			}
-		}
-		
-		console.log(longAssString.length);
-        
-        sock.write(longAssString.substring(0, 2047));
-        sock.write(longAssString.substring(2048, 4095));
-        
-        
     });
 
     sock.on('close', function(data) {
         console.log('CLOSED: ' + sock.remoteAddress +' '+ sock.remotePort);
         lovebox_sock = null;
     });
+    
+    
     
 }).listen(PORT, HOST);
 
