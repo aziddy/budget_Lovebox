@@ -79,3 +79,11 @@ https://en.lovebox.love/
 </p>
 
 
+## Programming Considerations
+The biggest thing I had to take into account when programming the budget Lovebox was I how I'am to get a image onto the *ESP8266*
+
+The *ESP8266* on the *Feather* has a **80Kb** of *RAM* at its disposale. But I'm dealing with a 128x128 image with 8bit RGB color and assuming no alpha byte for each pixel. 
+
+Thats `128 * 128 * 3 = 49152Kb` which is about `61%` of the available *RAM*. And that percentage isnt taking into account any overhead for the HTTP Header Reponse or any other variable. This is a quick side project I don't want to sit there doing memory optimization
+
+So I decided just to send unicolor images `128 * 128 = 16384Kb` which is about `20%` of the available *RAM*.
