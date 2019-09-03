@@ -78,12 +78,14 @@ https://en.lovebox.love/
   
 </p>
 
+<br>
+
 ## Construction
 * `Soldered` the Feather to the Display. 
 * `Hot Glued` the 3D printed peices together
 * `Spray Painted` Primer and Semi-Gloss White on the parts
 
-
+<br>
 
 ## ESP8266 Programming Considerations
 The biggest thing I had to take into account when programming the budget Lovebox was I how I'am to get a image onto the *ESP8266*
