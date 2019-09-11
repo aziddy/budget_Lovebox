@@ -84,6 +84,7 @@ https://en.lovebox.love/
 * `Soldered` the Feather to the Display. 
 * `Hot Glued` the 3D printed peices together
 * `Spray Painted` Primer and Semi-Gloss White on the parts
+* `Programmed` Server and Client
 
 <br>
 
