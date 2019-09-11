@@ -79,7 +79,7 @@ net.createServer(function(sock) {
 }).listen(PORT, HOST);
 
 
-console.log('Main Server listening on ' + HOST +':'+ PORT);
+console.log('LoveBox Server on ' + HOST +':'+ PORT);
 
 
 

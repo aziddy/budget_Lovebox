@@ -12,7 +12,7 @@
 
 #ifndef STASSID
 #define STASSID "BELL726"
-#define STAPSK  "57CF4E9F5691"
+#define STAPSK  "222"
 #endif
 
 const char* ssid     = STASSID;
@@ -88,11 +88,12 @@ void setup() {
 
 void loop(void) {
   delay(200);
-  getBMPtest();
+  networking();
   delay(200);
 }
 
-void drawByPixel(){
+/*
+void drawByPixelTest(){
 
   for(int x = 0; x < 128; x+=2){
     for(int y = 0; y < 128; y+=1){
@@ -100,9 +101,9 @@ void drawByPixel(){
     }
   }
 }
+*/
 
-
-void getBMPtest(){
+void networking(){
 
   if(client && !client.connected()){
     Serial.println("Client Closed");
@@ -118,6 +119,13 @@ void getBMPtest(){
 
   boolean firstPacket = true;
   
+  
+	/*	
+		For whatever reason this code doesn't work on celluar, because the packets get split up.
+		so next thing to do is make a multi receive setup. Where I specify the start and end
+		of a transimission
+	*/
+
   while (client.available()>0) {
 
     if(firstPacket){
@@ -128,10 +136,24 @@ void getBMPtest(){
     
     size_t size = client.available();
 
-      int c = client.readBytes(buff, ((size > sizeof(buff)) ? sizeof(buff) : size));
+	
+	
+	//  .readBytes ({0}, {1})
+	// {0} buffer to write to    {1} length of bytes to read
+	
+	int c = client.readBytes(buff, ((size > sizeof(buff)) ? sizeof(buff) : size));
+	
+	/*                                             ^ da faq is this expression ?
+	  
+	  Inline C logic
+	
+	  (condition) ? {code for YES} : {code for NO}
+	  
+	*/
+      
 
       for(int i = 0; i < sizeof(buff); i++){
-        if(buff[i] == '1'){
+      	if(buff[i] == '1'){
           tft.drawPixel(i, pixelCounter, RED);
         }
       }
